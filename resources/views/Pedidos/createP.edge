@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css1/semantic.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crear pedidos</title>
+    <style>
+    body{
+        min-height: 100vh;
+        background-color: #53fa65;
+        text-align: left;
+    }
+    .t1{
+        background-image: linear-gradient(128deg, #0026ff, #af55ff);
+        text-align: center;
+    }
+    .colors {  
+        width: 500px;
+        background:#9bfc8f;
+        margin:auto;
+        border-radius: 20px;
+        text-align: left;
+        color:#FF0000;
+        }
+
+    </style>
+</head>
+<body>
+        <br>
+        <div  class="ui raised very padded text container segment">
+        <br><a class="ui inverted primary button" href="/pedid/">Regresar</a>
+                <br>
+                <br>
+                <div class="colors">
+                <center>
+            <br>
+        <h1 class="ui center aligned icon header">
+        <i class="circular plus square icon"></i>
+           CREAR PEDIDOS
+        </h1>
+        <!---class="trash alternate icon"   class="star icon"  class="plus square icon"  class="save icon" class="circular users icon"--->
+        <br>
+        <label id="pedidos">PEDIDOS</label> <br>
+        <br>
+        <center>
+        </div>
+        <br>
+        <center>
+        <div>
+        <form name="formulario" action="/createP/" method="POST" class="ui fluid form" >
+        {{csrfField()}}
+       
+        <div class="inline field">
+                <input type="date" id="fecha" name="fecha"
+                min="2019-01-01" max="2019-12-31"  placeholder="NOMBRE" class="number">
+                <div class="ui left pointing label">
+                Ingresa FECHA
+                </div>
+                <br>
+        <br>
+        <div class="inline field">
+                <input type="text" name="cantidad" id="cantidad" placeholder="CANTIDAD" class="number">
+                <div class="ui left pointing label">
+                Ingresa CANTIDAD
+                </div>
+        <br>
+        <br>
+        <div class="inline field">
+        <select name="producto_id">
+                @each(product in products)
+                <option value="{{product.id}}">
+                {{product.nombre}} - ${{product.precio}}
+                </option>
+                @endeach
+                </select>
+                <!--<input type="text" name="product_id" id="product_id" placeholder="PRODUCTO_ID" class="number">-->
+                <div class="ui left pointing label">
+                Ingresa PRODUCTO
+                </div>
+        <br>
+        <br>
+        <div class="inline field">
+        <select name="cliente_id">
+                @each(client in clients)
+                <option value="{{client.id}}">
+                        {{client.nombre}}
+                        </option>
+                        @endeach
+                </select>
+                <!--<input type="text" name="client_id" id="client_id" placeholder="CLIENTE_ID" class="number">-->
+                <div class="ui left pointing label">
+                Ingresa CLIENTE
+                </div>
+        <br>
+        <br>
+        <div class="inline field">
+                <input type="text" name="total" id="total" placeholder="TOTAL" class="number">
+                <div class="ui left pointing label">
+                Ingresa TOTAL
+                </div>
+        <br>
+        <br>
+        <select name="entregado">
+                <option value="0">Por entregar</option>
+                <option value="1">Entregado</option>
+        </select>
+        <!--
+        <div class="inline field">
+                <input type="text" name="entregado" id="entregado" placeholder="ENTREGADO" class="number">
+                <div class="ui left pointing label">
+                Ingresa ENTREGADO
+                </div>-->
+        <br>
+        <br>
+        <button id="crear" class="ui inverted purple button" type="submit" >CREAR</button>
+        </form>
+</center>
+        </center>
+</div>
+</div>
+<br>
+<br>
+</body>
+
+</html>

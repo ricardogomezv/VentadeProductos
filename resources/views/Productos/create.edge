@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css1/semantic.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crear producto</title>
+    <style>
+    body{
+        min-height: 100vh;
+        background-color: #53fa65;
+        text-align: left;
+    }
+    .t1{
+        background-image: linear-gradient(128deg, #0026ff, #af55ff);
+        text-align: center;
+    }
+    .colors {  
+        width: 500px;
+        background:#9bfc8f;
+        margin:auto;
+        border-radius: 20px;
+        text-align: left;
+        color:#FF0000;
+        }
+
+    </style>
+</head>
+<body>  
+        <br>
+        <div  class="ui raised very padded text container segment">
+        
+        
+        <br><a class="ui inverted primary button" href="/product/">Regresar</a>
+            <br>
+            <br>
+        <div class="colors">
+        <center>
+        <h1 class="ui center aligned icon header">
+        <i class="circular plus square icon"></i>
+           CREAR PRODUCTO
+        </h1>
+        <!---class="trash alternate icon"   class="star icon"  class="plus square icon"  class="save icon" class="circular users icon"--->
+        <br>
+        <label id="producto">PRODUCTO</label> <br>
+        <br>
+        </center>
+        </div>
+        <div>
+                <br>
+                <center>
+        <form name="formulario" action="/create/" method="POST" class="ui fluid form" >
+        {{csrfField()}}
+       
+        <div class="inline field">
+                <input type="text" name="nombre" id="existencia" placeholder="NOMBRE" class="number">
+                <div class="ui left pointing label">
+                Ingresa NOMBRE
+                </div>
+                <br>
+        <br>
+        <div class="inline field">
+                <input type="text" name="precio" id="existencia" placeholder="PRECIO" class="number">
+                <div class="ui left pointing label">
+                Ingresa PRECIO
+                </div>
+        <br>
+        <br>
+        <div class="inline field">
+                <input type="text" name="existencia" id="existencia" placeholder="EXISTENCIA" class="number">
+                <div class="ui left pointing label">
+                Ingresa EXISTENCIA
+                </div>
+        <br>
+        <br>
+        <div class="inline field">
+                <input type="text" name="codigo" id="codigo" placeholder="CODIGO" class="number">
+                <div class="ui left pointing label">
+                Ingresa CODIGO
+                </div>
+        <br>
+        <br>
+        <button id="crear" class="ui inverted purple button" type="submit" >CREAR</button>
+        </form>
+</center>
+</div>
+        
+</div>
+<br>
+</body>
+</html>

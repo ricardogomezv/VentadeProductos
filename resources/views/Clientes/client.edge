@@ -1,0 +1,78 @@
+ <html>
+<head>
+<link rel="stylesheet" href="/css1/semantic.css">
+    <title>Tabla de Datos</title>
+    <style>
+    body{
+        min-height: 100vh;
+        background-color: #53d4fa;
+        text-align: left;
+    }
+
+    .estructura{
+                size: 150px;
+                color: white;
+                text-align: center;
+            }
+
+    table {
+            width: 50%;
+            height: 50%;
+        }
+
+        th{
+            
+            background-color: #00b06d;
+            border: 2px solid black;
+            border-radius: 3%;
+        }
+    </style>
+    </head>
+
+<body>
+<center>
+        <br><a class="ui orange button" href="http://127.0.0.1:3333/">Regresar</a>
+    <br>
+ <h1 class="title">Lista de Clientes</h1>
+ <a class="ui inverted green button" href="/createC/">AÑADIR CLIENTE</a><br>
+ <br>
+
+
+<!---<ul>
+@each(product in products)
+    <li> Nombre: {{ product.nombre}} --- Precio: {{ product.precio}} --- Existencia:{{ product.existencia}} </li>
+@endeach
+</ul>--->
+
+<table>
+    <tr >
+    <th class="estructura">ID</th>
+    <th class="estructura">Nombre</th>
+    <th class="estructura">Apellido </th>
+    <th class="estructura">Email</th>
+    <th class="estructura">Telefono</th>
+    <th class="estructura">Direccion</th>
+    <th class="estructura">RFC</th>
+    <th> </th>
+    <th> </th>
+    </tr>
+ @each(client in clients)
+    <tr>
+        <th class="estructura">{{ client.id}}</th>
+        <th class="estructura">{{ client.nombre}}</th>
+        <th class="estructura">{{ client.apellido}}</th>
+        <th class="estructura">{{ client.email}}</th>
+        <th class="estructura">{{ client.telefono}}</th>
+        <th class="estructura">{{ client.direccion}}</th>
+        <th class="estructura">{{ client.rfc}}</th>
+        <th><a class="ui inverted yellow button" href="/editarC/{{client.id}}">EDITAR</a></th>
+        <th><a class="ui inverted red button" href="/deleteC/{{client.id}}">BORRAR</a></th>
+        
+    </tr>
+    @endeach
+</table>
+
+</center>
+</body>
+</html>
+

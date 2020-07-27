@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css1/semantic.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Agregar Cliente</title>
+    <style>
+    body{
+        min-height: 100vh;
+        background-color: #53fa65;
+        text-align: left;
+    }
+    .t1{
+        background-image: linear-gradient(128deg, #0026ff, #af55ff);
+        text-align: center;
+    }
+
+    .colors {  
+        width: 500px;
+        background:#9bfc8f;
+        margin:auto;
+        border-radius: 20px;
+        text-align: left;
+        color:#FF0000;
+        }
+
+    </style>
+</head>
+<body>  
+        <br>
+        <div  class="ui raised very padded text container segment">
+        
+        
+        <br><a class="ui inverted primary button" href="/client/">Regresar</a>
+            <br>
+            <br>
+        <div class="colors">
+        <center>
+            <br>
+        <h1 class="ui center aligned icon header">
+        <i class="circular plus square icon"></i>
+           AÑADIR CLIENTE
+        </h1>
+        <!---class="trash alternate icon"   class="star icon"  class="plus square icon"  class="save icon" class="circular users icon"--->
+        <br>
+        <label id="cliente">CLIENTE</label> <br>
+        <br>
+        </center>
+        </div>
+        <div>
+                <center>
+                        <br>
+        <form name="formulario" action="/createC/" method="POST" class="ui fluid form" >
+        {{csrfField()}}
+       
+        <div class="inline field">
+                <input type="text" name="nombre" id="nombre" placeholder="NOMBRE" class="number">
+                <div class="ui left pointing label">
+                Ingresa NOMBRE
+                </div>
+                <br>
+        <br>
+        <div class="inline field">
+                <input type="text" name="apellido" id="apellido" placeholder="APELLIDO" class="number">
+                <div class="ui left pointing label">
+                Ingresa APELLIDO
+                </div>
+        <br>
+        <br>
+        <div class="inline field">
+                <input type="text" name="email" id="email" placeholder="EMAIL" class="number">
+                <div class="ui left pointing label">
+                Ingresa EMAIL
+                </div>
+        <br>
+        <br>
+        <div class="inline field">
+                <input type="text" name="telefono" id="telefono" placeholder="TELEFONO" class="number">
+                <div class="ui left pointing label">
+                Ingresa TELEFONO
+                </div>
+        <br>
+        <br>
+        <div class="inline field">
+                <input type="text" name="direccion" id="direccion" placeholder="DIRECCIÓN" class="number">
+                <div class="ui left pointing label">
+                Ingresa DIRECCIÓN
+                </div>
+        <br>
+        <br>
+        <div class="inline field">
+                <input type="text" name="rfc" id="rfc" placeholder="RFC" class="number">
+                <div class="ui left pointing label">
+                Ingresa RFC
+                </div>
+        <br>
+        <br>
+        <button id="crear" class="ui inverted purple button" type="submit" >CREAR</button>
+        </form>
+        </center>
+        </div>
+        
+</div>
+<br>
+        <br>
+
+</body>
+</html> 

@@ -1,0 +1,89 @@
+ <html>
+<head>
+<link rel="stylesheet" href="/css1/semantic.css">
+    <title>Tabla de Datos</title>
+    <style>
+    body{
+        min-height: 100vh;
+        background-color: #53d4fa;
+        text-align: left;
+    }
+
+    .estructura{
+                size: 150px;
+                color: white;
+                text-align: center;
+            }
+
+    table {
+            width: 50%;
+            height: 50%;
+        }
+
+        th{
+            
+            background-color: #00b06d;
+            border: 2px solid black;
+            border-radius: 3%;
+        }
+        .container {  
+        width: 200px;
+        background:#8cbfff;
+        margin:auto;
+        border:3px solid:#000000;
+        text-align: left;
+        color:#FF0000;
+        }
+    </style>
+    </head>
+
+<body>
+<center>
+<div >
+<br><a class="ui orange button" href="http://127.0.0.1:3333/">Regresar</a>
+    <br>
+    <br>
+<div><center>
+ <h1 class="title">Lista de Producto</h1>
+ <a class="ui inverted green button" href="/create/">CREAR PRODUCTO</a><br>
+ <br>
+    </center>
+</div>
+
+<!---<ul>
+@each(product in products)
+    <li> Nombre: {{ product.nombre}} --- Precio: {{ product.precio}} --- Existencia:{{ product.existencia}} </li>
+@endeach
+</ul>--->
+<div>
+    <center>
+<table>
+    <tr >
+    <th class="estructura">ID</th>
+    <th class="estructura">Nombre</th>
+    <th class="estructura">Precio </th>
+    <th class="estructura"> Existencia</th>
+    <th class="estructura"> Codigo</th>
+    <th> </th>
+    <th> </th>
+    </tr>
+ @each(product in products)
+    <tr>
+        <th class="estructura">{{ product.id}}</th>
+        <th class="estructura">{{ product.nombre}}</th>
+        <th class="estructura">{{ product.precio}}</th>
+        <th class="estructura">{{ product.existencia}}</th>
+        <th class="estructura">{{ product.codigo}}</th>
+        <th><a class="ui inverted yellow button" href="/editar/{{product.id}}">EDITAR</a></th>
+        <th><a class="ui inverted red button" href="/delete/{{product.id}}">BORRAR</a></th>
+        
+    </tr>
+    @endeach
+</table>
+    </center>
+</div>
+</center>
+</div>
+</body>
+</html>
+

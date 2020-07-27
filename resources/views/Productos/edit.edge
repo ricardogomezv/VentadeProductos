@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css1/semantic.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Editar producto</title>
+    <style>
+    body{
+        min-height: 100vh;
+        background-color: #f7fa53;
+        text-align: left;
+    }
+    .t1{
+        background-image: linear-gradient(128deg, #01bb2f, #ced105);
+        text-align: center;
+    }
+    .container {  
+        width: 500px;
+        background:#f7ff02;
+        margin:auto;
+        border-radius: 20px;
+        text-align: left;
+        color:#FF0000;
+        }
+    </style>
+</head>
+<body>
+        <center>
+        <br>
+        <div class="ui raised very padded text container segment" >
+        <br><a class="ui inverted primary button" href="/product/">Regresar</a>
+        <br>
+        <br>
+        <div class="container">
+        <center>
+        <h1 class="ui center aligned icon header">
+        <i class="circular save icon"></i>
+            EDITAR PRODUCTO
+        </h1>
+        <label id="producto">PRODUCTO</label> <br>  
+        </center>            
+        </div>
+        <center>
+        <br>
+        <div>
+        <form name="formulario" action="/edit/{{producto.id}}" method="POST" class="ui fluid form" >
+        {{csrfField()}}
+        <div class="inline field">
+                <input type="text" name="nombre" id="nombre" value ={{producto.nombre}} class="number">
+                <div class="ui left pointing label">
+                Ingresa NUEVO NOMBRE
+                </div>
+        <br>
+        <br>
+        <div class="inline field">
+                <input type="text" name="precio" id="precio" value ={{producto.precio}} class="number"> 
+                <div class="ui left pointing label">
+                Ingresa NUEVO PRECIO
+                </div>
+        <br>
+        <br>
+        <div class="inline field">
+                <input type="text" name="existencia" id="existencia" value ={{producto.existencia}} class="number">
+                <div class="ui left pointing label">
+                Ingresa NUEVA EXISTENCIA
+                </div>
+        <br>
+         <br>
+         <div class="inline field">
+                <input type="text" name="codigo" id="codigo" value ={{producto.codigo}} class="number">
+                <div class="ui left pointing label">
+                Ingresa NUEVO CODIGO
+                </div>
+        <br>
+        <br>
+        <button id="crear" class="ui inverted green button" type="submit" >EDITAR</button>
+        </form>
+        </div>
+        </center>
+        </div>
+        <br>
+        </center>
+</body>
+</html>
